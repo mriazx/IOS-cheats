@@ -58,6 +58,7 @@ Return to privileged EXEC mode using the `end` command.
 ```console
 Switch(config-line)# end
 ```
+
 | Command | Used to |
 |---------|---------|
 |`show running-config`|Verifies the current configuration and settings.|
