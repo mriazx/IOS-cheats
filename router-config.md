@@ -1,7 +1,5 @@
 ## Router Configuration
-The Router comes preconfigured and only needs to be assigned basic security information before being connected to the network. Elements that are usually configured on a LAN switch include: host name, management IP address information, passwords, and descriptive information.
-
-Before configuring a switch, review the following initial switch configuration tasks:
+The following tasks should be completed when configuring initial settings on a router.
 
 ### Configure the device name.
 
@@ -11,28 +9,29 @@ Router# configure terminal
 Router(config)# hostname <name>
 ```
 
+### Secure privileged EXEC mode.
+
+```console
+Router(config)# enable secret <password>
+```
+
 ### Secure user EXEC mode.
 
 ```console
-Router(config)# enable secret class
 Router(config)# line console 0
-Router(config-line)# password <password>
-Router(config-line)# login
-```
-
-### Secure remote Telnet / SSH access.
-
-```console
-Router(config-line)# line vty 0 15
 Router(config-line)# password <password>
 Router(config-line)# login
 Router(config-line)# exit
 ```
 
-### Secure privileged EXEC mode.
+### Secure remote Telnet / SSH access.
 
 ```console
-Router(config)# enable secret password
+Router(config)# line vty 0 15
+Router(config-line)# password <password>
+Router(config-line)# login
+Router(config-line)# transport input ssh telnet
+Router(config-line)# exit
 ```
 
 ### Secure all passwords in the config file.
