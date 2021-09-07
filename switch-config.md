@@ -6,7 +6,7 @@ Before configuring a switch, review the following initial switch configuration t
 ### Configure the device name.
 
 ```console
-Switch> enale
+Switch> enable
 Switch# configure terminal
 Switch(config)# hostname <name>
 ```
